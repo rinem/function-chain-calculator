@@ -1,50 +1,53 @@
-# React + TypeScript + Vite
+# Function chaining board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
 
-Currently, two official plugins are available:
+- Input an initial value and execute a sequence of functions on it.
+- View the final output after all functions are applied in a specific order.
+- Modify the equations for each function dynamically.
+- Display the next function to be executed or the final output.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project Structure
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+/src
+  ├── components
+  │   ├── InputBox.tsx       
+  │   ├── OutputBox.tsx      
+  │   ├── FunctionCard.tsx   
+  │   ├── ErrorMessage.tsx
+  |   ├── Board.tsx              
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Installation
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/rinem/function-chain-calculator
+   cd function-chain-calculator
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+
+3. **Run the application**:
+   ```bash
+   npm run dev
+   ```
+
+The app should now be running locally on `http://localhost:5173/`.
+
+## Technologies Used
+
+- **React**: JavaScript framework for building the user interface.
+- **TypeScript**: For type safety and better development experience.
+- **CSS (Tailwind CSS)**: For styling components with utility-first CSS classes.
+
+## Future Improvements
+
+- I could not make it completely as per design because of time constraints, so should make it more accurate with the design
+- Add the ability to change the execution order dynamically.
+- Save custom function equations and restore them on reload.
+- Improve equation validation to handle more complex expressions.
